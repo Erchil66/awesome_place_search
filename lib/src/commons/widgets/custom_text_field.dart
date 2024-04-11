@@ -3,6 +3,14 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hint;
+  final TextStyle? fontStyle, hintStyle;
+  final Color? cursorColor;
+  // fillColor,
+  //     borderSideColor,
+  //     enableBorderColor,
+  //     focusedBorderColor,
+  //     cursorColor;
+  final InputBorder? border, enabledBorder, focusedBorder;
   final Function(String) onChange;
 
   const CustomTextField({
@@ -10,6 +18,16 @@ class CustomTextField extends StatelessWidget {
     required this.hint,
     required this.controller,
     required this.onChange,
+    this.fontStyle,
+    this.hintStyle,
+    // this.fillColor,
+    // this.borderSideColor,
+    // this.enableBorderColor,
+    // this.focusedBorderColor,
+    this.cursorColor,
+    this.border,
+    this.enabledBorder,
+    this.focusedBorder,
   });
 
   @override
@@ -38,6 +56,8 @@ class CustomTextField extends StatelessWidget {
         child: TextField(
           controller: controller,
           onChanged: onChange,
+          style: fontStyle,
+          cursorColor: cursorColor,
           decoration: InputDecoration(
             suffixIcon: controller.text.isNotEmpty
                 ? IconButton(
@@ -54,8 +74,11 @@ class CustomTextField extends StatelessWidget {
               Icons.search,
               color: Colors.grey,
             ),
-            border: InputBorder.none,
+            border: border ?? InputBorder.none,
+            enabledBorder: enabledBorder ?? InputBorder.none,
+            focusedBorder: focusedBorder ?? InputBorder.none,
             hintText: hint,
+            hintStyle: hintStyle,
           ),
         ),
       ),

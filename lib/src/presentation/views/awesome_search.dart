@@ -46,7 +46,7 @@ class AwesomePlaceSearch {
 
   ///[show]
   ///Show modal to search places
-  void show() async {
+  void show({Color? bgColor}) async {
     showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
@@ -60,9 +60,9 @@ class AwesomePlaceSearch {
             return Container(
               height: height * .9,
               width: double.infinity,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
+              decoration: BoxDecoration(
+                color: bgColor ?? Colors.white,
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(15),
                   topRight: Radius.circular(15),
                 ),
