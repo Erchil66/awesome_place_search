@@ -118,7 +118,7 @@ class AwesomePlaceSearch {
                 width: 100,
                 height: 10,
                 decoration: BoxDecoration(
-                  color: bgColor ?? Colors.grey.withOpacity(.3),
+                  color: Colors.grey.withOpacity(.3),
                   borderRadius: BorderRadius.circular(50),
                 ),
               ),
