@@ -79,7 +79,7 @@ class AwesomePlaceSearch {
                   topRight: Radius.circular(15),
                 ),
               ),
-              child: _bodyModal(height: height),
+              child: _bodyModal(height: height, bgColor: bgColor),
             );
           });
         });
@@ -89,7 +89,7 @@ class AwesomePlaceSearch {
 
   ///[_bodyModal]
   ///Component that constitutes the body of the modal
-  Widget _bodyModal({required double height}) {
+  Widget _bodyModal({required double height, Color? bgColor}) {
     return BlocProvider(
       create: (_) {
         bloc.add(AwesomePlacesSearchLoadingEvent(
@@ -118,7 +118,7 @@ class AwesomePlaceSearch {
                 width: 100,
                 height: 10,
                 decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(.3),
+                  color: bgColor ?? Colors.grey.withOpacity(.3),
                   borderRadius: BorderRadius.circular(50),
                 ),
               ),
