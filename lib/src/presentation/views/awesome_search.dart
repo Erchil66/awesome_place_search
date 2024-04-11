@@ -23,6 +23,9 @@ class AwesomePlaceSearch {
   final Widget? onEmpty;
   final Function(Future<PredictionModel>) onTap;
   final dependencies = Dependencies();
+  final TextStyle? fontStyle, hintStyle;
+  final Color? cursorColor;
+  final InputBorder? border, enabledBorder, focusedBorder;
 
   AwesomePlaceSearch({
     required this.context,

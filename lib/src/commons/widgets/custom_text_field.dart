@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hint;
-  final TextStyle? fontStyle, hintStyle;
-  final Color? cursorColor;
+
   // fillColor,
   //     borderSideColor,
   //     enableBorderColor,
   //     focusedBorderColor,
   //     cursorColor;
+  final TextStyle? fontStyle, hintStyle;
+  final Color? cursorColor;
   final InputBorder? border, enabledBorder, focusedBorder;
   final Function(String) onChange;
 
