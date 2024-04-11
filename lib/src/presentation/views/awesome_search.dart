@@ -23,9 +23,12 @@ class AwesomePlaceSearch {
   final Widget? onEmpty;
   final Function(Future<PredictionModel>) onTap;
   final dependencies = Dependencies();
-  final TextStyle? fontStyle, hintStyle;
+  final TextStyle? fontStyle;
+  final TextStyle? hintStyle;
   final Color? cursorColor;
-  final InputBorder? border, enabledBorder, focusedBorder;
+  final InputBorder? border;
+  final InputBorder? enabledBorder;
+  final InputBorder? focusedBorder;
 
   AwesomePlaceSearch({
     required this.context,
@@ -35,6 +38,12 @@ class AwesomePlaceSearch {
     required this.onTap,
     this.onEmpty,
     this.onError,
+    this.fontStyle,
+    this.hintStyle,
+    this.cursorColor,
+    this.border,
+    this.enabledBorder,
+    this.focusedBorder,
   }) {
     //init clean architecture dependency
     dependencies.initDependencies(key);
@@ -124,6 +133,11 @@ class AwesomePlaceSearch {
                       child: CustomTextField(
                         hint: hint,
                         controller: txtsearch,
+                        fontStyle: fontStyle,
+                        hintStyle: hintStyle,
+                        focusedBorder: focusedBorder,
+                        enabledBorder: enabledBorder,
+                        border: border,
                         onChange: (value) {
                           _debouncer(callback: () {
                             bloc.add(
