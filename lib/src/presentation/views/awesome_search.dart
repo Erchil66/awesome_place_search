@@ -62,7 +62,7 @@ class AwesomePlaceSearch {
     showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
-      barrierColor: Colors.grey.withOpacity(.7),
+      barrierColor: Colors.transparent,
       backgroundColor: Colors.transparent,
       useSafeArea: false,
       builder: (context) {
@@ -138,6 +138,7 @@ class AwesomePlaceSearch {
                         focusedBorder: focusedBorder,
                         enabledBorder: enabledBorder,
                         border: border,
+                        bgColor: bgColor,
                         onChange: (value) {
                           _debouncer(callback: () {
                             bloc.add(

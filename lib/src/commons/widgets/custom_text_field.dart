@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
   //     focusedBorderColor,
   //     cursorColor;
   final TextStyle? fontStyle, hintStyle;
-  final Color? cursorColor;
+  final Color? cursorColor, bgColor;
   final InputBorder? border, enabledBorder, focusedBorder;
   final Function(String) onChange;
 
@@ -26,6 +26,7 @@ class CustomTextField extends StatelessWidget {
     // this.enableBorderColor,
     // this.focusedBorderColor,
     this.cursorColor,
+    this.bgColor,
     this.border,
     this.enabledBorder,
     this.focusedBorder,
@@ -37,7 +38,7 @@ class CustomTextField extends StatelessWidget {
       height: 80,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: bgColor ?? Colors.white,
         borderRadius: const BorderRadius.vertical(
           top: Radius.circular(10),
         ),
